@@ -1,0 +1,43 @@
+﻿@model REPO_GENERICMETHOD.Models.Bignners
+
+@{
+    ViewData["Title"] = "ADD_Bignners";
+}
+
+<h1>ADD_Bignners</h1>
+
+<h4>Bignners</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ADD_Bignners">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="B_Name" class="control-label"></label>
+                <input asp-for="B_Name" class="form-control" />
+                <span asp-validation-for="B_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="B_Age" class="control-label"></label>
+                <input asp-for="B_Age" class="form-control" />
+                <span asp-validation-for="B_Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="B_Level" class="control-label"></label>
+                <input asp-for="B_Level" class="form-control" />
+                <span asp-validation-for="B_Level" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="GetallBignners">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

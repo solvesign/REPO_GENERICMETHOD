@@ -1,0 +1,43 @@
+﻿@model REPO_GENERICMETHOD.Models.Player
+
+@{
+    ViewData["Title"] = "ADD_PLayer";
+}
+
+<h1>ADD_PLayer</h1>
+
+<h4>Player</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ADD_PLayer">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Player_Name" class="control-label"></label>
+                <input asp-for="Player_Name" class="form-control" />
+                <span asp-validation-for="Player_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player_Age" class="control-label"></label>
+                <input asp-for="Player_Age" class="form-control" />
+                <span asp-validation-for="Player_Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player_Lavel" class="control-label"></label>
+                <input asp-for="Player_Lavel" class="form-control" />
+                <span asp-validation-for="Player_Lavel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="GetallPlayers">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

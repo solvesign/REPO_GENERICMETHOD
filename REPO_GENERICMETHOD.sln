@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REPO_GENERICMETHOD", "REPO_GENERICMETHOD\REPO_GENERICMETHOD.csproj", "{B76B93BD-2943-46B4-BAD0-CF89F977513E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REPO_GENERICMETHOD.text", "REPO_GENERICMETHOD.text\REPO_GENERICMETHOD.text.csproj", "{4859212F-5FD2-4174-B6AD-9B0B7235024E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B76B93BD-2943-46B4-BAD0-CF89F977513E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B76B93BD-2943-46B4-BAD0-CF89F977513E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B76B93BD-2943-46B4-BAD0-CF89F977513E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B76B93BD-2943-46B4-BAD0-CF89F977513E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4859212F-5FD2-4174-B6AD-9B0B7235024E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4859212F-5FD2-4174-B6AD-9B0B7235024E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4859212F-5FD2-4174-B6AD-9B0B7235024E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4859212F-5FD2-4174-B6AD-9B0B7235024E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5D9DD5C-E0BE-4D19-A388-9B1B46AADE1F}
+	EndGlobalSection
+EndGlobal
