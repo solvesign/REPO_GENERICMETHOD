@@ -1,0 +1,44 @@
+﻿@model REPO_GENERICMETHOD.Models.Bignners
+
+@{
+    ViewData["Title"] = "Edit_Bignners";
+}
+
+<h1>Edit_Bignners</h1>
+
+<h4>Bignners</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit_Bignners">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="B_Name" class="control-label"></label>
+                <input asp-for="B_Name" class="form-control" />
+                <span asp-validation-for="B_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="B_Age" class="control-label"></label>
+                <input asp-for="B_Age" class="form-control" />
+                <span asp-validation-for="B_Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="B_Level" class="control-label"></label>
+                <input asp-for="B_Level" class="form-control" />
+                <span asp-validation-for="B_Level" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="GetallBignners">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

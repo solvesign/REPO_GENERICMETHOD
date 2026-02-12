@@ -16,7 +16,6 @@ namespace REPO_GENERICMETHOD.Models
 
         public string Player_Name { get; set; }
         [Required]
-        [StringLength(50)]
         public int Player_Age { get; set; }
         [Required]
         [StringLength(50)]

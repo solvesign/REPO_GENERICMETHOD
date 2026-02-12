@@ -1,0 +1,36 @@
+﻿@model REPO_GENERICMETHOD.Models.Bignners
+
+@{
+    ViewData["Title"] = "DetailsofBignners";
+}
+
+<h1>DetailsofBignners</h1>
+
+<div>
+    <h4>Bignners</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.B_Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.B_Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.B_Age)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.B_Age)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.B_Level)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.B_Level)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit_Bignners" asp-route-id="@Model?.ID">Edit</a> |
+    <a asp-action="GetallBignners">Back to List</a>
+</div>

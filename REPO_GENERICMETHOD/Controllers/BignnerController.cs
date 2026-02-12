@@ -47,7 +47,7 @@ namespace REPO_GENERICMETHOD.Controllers
         {
             var res1 = _bignnersServices.UpdateBignners(Bignners);
 
-            return RedirectToAction("GetallBignnerss");
+            return RedirectToAction("GetallBignners");
         }
         [HttpGet]
 
@@ -65,7 +65,7 @@ namespace REPO_GENERICMETHOD.Controllers
 
             _bignnersServices.DeleteBignners(res);
             
-            return RedirectToAction("GetallBignnerss");
+            return RedirectToAction("GetallBignners");
 
         }
 
