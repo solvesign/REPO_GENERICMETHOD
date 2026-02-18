@@ -45,6 +45,31 @@ namespace REPO_GENERICMETHOD.Migrations
                     b.ToTable("BignnersRec");
                 });
 
+            modelBuilder.Entity("REPO_GENERICMETHOD.Models.Order", b =>
+                {
+                    b.Property<int>("OrderId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PlayerID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Player_Id")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderId");
+
+                    b.HasIndex("PlayerID");
+
+                    b.ToTable("B_Order");
+                });
+
             modelBuilder.Entity("REPO_GENERICMETHOD.Models.Player", b =>
                 {
                     b.Property<int>("PlayerID")
@@ -53,10 +78,8 @@ namespace REPO_GENERICMETHOD.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PlayerID"));
 
-                    b.Property<string>("Player_Age")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<int>("Player_Age")
+                        .HasColumnType("int");
 
                     b.Property<string>("Player_Lavel")
                         .IsRequired()
@@ -71,6 +94,17 @@ namespace REPO_GENERICMETHOD.Migrations
                     b.HasKey("PlayerID");
 
                     b.ToTable("PlayersRec");
+                });
+
+            modelBuilder.Entity("REPO_GENERICMETHOD.Models.Order", b =>
+                {
+                    b.HasOne("REPO_GENERICMETHOD.Models.Player", "PlayersRec")
+                        .WithMany()
+                        .HasForeignKey("PlayerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PlayersRec");
                 });
 #pragma warning restore 612, 618
         }

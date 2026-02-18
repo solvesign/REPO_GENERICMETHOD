@@ -14,7 +14,7 @@ namespace REPO_GENERICMETHOD.DAL.IRepositories
         public DbSet<Player> PlayersRec { get; set; }
 
         public DbSet<Bignners> BignnersRec { get; set; }
-        public DbSet<Order> Orders { get; set; }
+        public DbSet<Order> B_Order { get; set; }
     }
 
 }

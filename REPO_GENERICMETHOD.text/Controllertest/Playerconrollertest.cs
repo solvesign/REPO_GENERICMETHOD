@@ -78,7 +78,7 @@ namespace REPO_GENERICMETHOD.text.Controllertest
 
             // Assert
              
-            var redirect = Assert.IsType<RedirectToActionResult>(GetallPlayers);
+            var redirect = Assert.IsType<RedirectToActionResult>("GetallPlayers");
             
             Assert.Equal("GetallPlayers", redirect.ActionName);
             
