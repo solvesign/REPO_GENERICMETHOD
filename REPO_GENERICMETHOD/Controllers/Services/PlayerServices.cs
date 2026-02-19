@@ -85,21 +85,27 @@ namespace REPO_GENERICMETHOD.Controllers.Services
             
         }
 
-        public bool UpdatePlayer(Player player)
+        public async Task< bool> UpdatePlayer(Player player)
         {
             if (player != null) 
             {
-             _unitofWork._playerRepository.Update(player);
-                
-                var res = _unitofWork.Save();
+               var result =  await _unitofWork._playerRepository.GetById(player.PlayerID);
 
-                if (res > 0)
+                 if(result != null)
                 {
+                    result.PlayerID = player.PlayerID;
+                    result.Player_Name = player.Player_Name;
+                    result.Player_Age = player.Player_Age;
+                    result.Player_Lavel = player.Player_Lavel;
+                    _unitofWork._playerRepository.Update(result);
+                    _unitofWork.Save();
+
                     return true;
                 }
                 return false;
             }
-            return false ;
+
+            return false;
            
 
            
