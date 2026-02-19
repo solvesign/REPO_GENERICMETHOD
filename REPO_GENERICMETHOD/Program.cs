@@ -18,6 +18,8 @@ builder.Services.AddScoped<IUnitofWork,  UnitofWork>();
 builder.Services.AddScoped<IPlayerServices, PlayerServices>();
 builder.Services.AddScoped<IBignnersRepository, BignnersRepository>();
 builder.Services.AddScoped<IBignnersServices, BignnersServices>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IOrderServices, OrderServices>();
 
 
 var app = builder.Build();

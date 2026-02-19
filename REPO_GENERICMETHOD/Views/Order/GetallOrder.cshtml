@@ -1,0 +1,47 @@
+﻿@model IEnumerable<REPO_GENERICMETHOD.Models.Order>
+
+@{
+    ViewData["Title"] = "GetallOrder";
+}
+
+<h1>GetallOrder</h1>
+
+<p>
+    <a asp-action="ADD_Order">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Qty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.ProductId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Player.Player_Lavel)
+            </td>
+            <td>
+                    <a asp-action="Edit_Order" asp-route-id="@item.OrderId">Edit</a> |
+                    <a asp-action="DetailsofOrder" asp-route-id="@item.OrderId">Details</a> |
+                    <a asp-action="DeleteOrder" asp-route-id="@item.OrderId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

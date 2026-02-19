@@ -9,13 +9,18 @@ namespace REPO_GENERICMETHOD.DAL.Repositories
         public IPlayerRepository _playerRepository { get; }
         public IBignnersRepository _bignnersRepository { get; }
 
+        public IOrderRepository _orderRepository { get; }
+
         private readonly ApplicationDbcontext _Dbcontext;
-        public UnitofWork(ApplicationDbcontext dbcontext, IPlayerRepository playerRepository,IBignnersRepository bignnersRepository)
+        public UnitofWork(ApplicationDbcontext dbcontext, IPlayerRepository playerRepository,IBignnersRepository bignnersRepository,
+            IOrderRepository orderRepository)
+
         
         {
             _Dbcontext = dbcontext;
             _playerRepository = playerRepository;
             _bignnersRepository = bignnersRepository;
+            _orderRepository = orderRepository;
         }
 
       
