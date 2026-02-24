@@ -5,80 +5,75 @@ using REPO_GENERICMETHOD.Models;
 
 namespace REPO_GENERICMETHOD.Controllers
 {
-    public class OrderController : Controller
+    public class CategoryController : Controller
     {
-        private readonly IOrderServices _OrderServices;
+        private readonly ICategoryServices _categoryServices;
         private readonly ApplicationDbcontext _applicationDbcontext;
 
         
 
-        public OrderController(IOrderServices OrderServices, ApplicationDbcontext applicationDbcontext)
+        public CategoryController(ICategoryServices categoryServices, ApplicationDbcontext applicationDbcontext)
         {
-            _OrderServices = OrderServices;
+            _categoryServices = categoryServices;
             _applicationDbcontext = applicationDbcontext;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetallOrder()
+        public async Task<IActionResult> GetallCategory()
         {
-            var res = await _OrderServices.GetAllOrders();
+            var res = await _categoryServices.GetAllcategory();
 
             return View(res);
         }
         [HttpGet]
-        public async Task<IActionResult> ADD_Order()
+        public async Task<IActionResult> ADD_Category()
         {
-            var productdetails = _applicationDbcontext.Product.Select(x => new Product
-            {
-               Name = x.Name,
-              
-             ProductId = x.ProductId,
-
-            });
-
+            
 
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> ADD_Order(Order Order)
+        public async Task<IActionResult> ADD_Category(Category category)
         {
            
-            var res = await _OrderServices.AddOrders(Order);
+            var res = await _categoryServices.Addcategory(category);
 
             return RedirectToAction("GetallOrder");
         }
         [HttpGet]
 
-        public async Task <IActionResult>  Edit_Order(int id)
+        public async Task <IActionResult>  Edit_Category(int id)
         {
-            var res = await _OrderServices.GetOrdersByID(id);
+            var res = await _categoryServices.GetcategoryByID(id);
             
             return View(res);
         }
        
         [HttpPost]
 
-        public async Task<IActionResult> Edit_Order(Order order)
-        {
-            var res1 = _OrderServices.UpdateOrders(order);
+        public async Task<IActionResult> Edit_Category(Category category) 
+        { 
+
+     
+            var res1 = _categoryServices.Updatecategory(category);
 
             return RedirectToAction("GetallOrder");
         }
         [HttpGet]
 
-        public async Task<IActionResult> DetailsofOrder(int id)
+        public async Task<IActionResult> DetailsofCategory(int id)
         {
-            var res1 = await _OrderServices.GetOrdersByID(id);
+            var res1 = await _categoryServices.GetcategoryByID(id);
 
             return View(res1);
 
         }
         [HttpGet]
-        public async Task < IActionResult>  DeleteOrder(int id)
+        public async Task < IActionResult>  DeleteCAtegory(int id)
         {
-            var res = await _OrderServices.GetOrdersByID(id);
+            var res = await _categoryServices.GetcategoryByID(id);
 
-            _OrderServices.DeleteOrders(res);
+            _categoryServices.Deletecategorys(res);
             
             return RedirectToAction("GetallOrder");
 

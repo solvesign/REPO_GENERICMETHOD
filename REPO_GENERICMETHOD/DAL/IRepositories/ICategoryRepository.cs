@@ -2,7 +2,7 @@
 
 namespace REPO_GENERICMETHOD.DAL.Iinterfaces
 {
-    public interface IOrderRepository:IGenericRepository<Order>
+    public interface ICategoryRepository:IGenericRepository<Category>
     { 
        
 

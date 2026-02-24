@@ -4,15 +4,15 @@ using REPO_GENERICMETHOD.Models;
 
 namespace REPO_GENERICMETHOD.Controllers.IService
 {
-    public interface IOrderServices
+    public interface ICategoryServices
     {
-        Task <IEnumerable<Order>> GetAllOrders();
-          bool DeleteOrders(Order Orders);
-        Task <bool> AddOrders(Order Orders);
+        Task <IEnumerable<Category>> GetAllcategory();
+          bool Deletecategorys(Category category);
+        Task <bool> Addcategory(Category category);
 
-        Task  <Order> GetOrdersByID(int Id);
+        Task  <Category> GetcategoryByID(int Id);
 
-       bool UpdateOrders(Order Orders);
+       Task <bool> Updatecategory(Category category);
 
     }
 }

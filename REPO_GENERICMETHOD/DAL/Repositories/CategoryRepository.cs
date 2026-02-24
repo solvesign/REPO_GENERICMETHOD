@@ -4,10 +4,10 @@ using REPO_GENERICMETHOD.Models;
 
 namespace REPO_GENERICMETHOD.DAL.Repositories
 {
-    public class OrderRepository:GenericRepository<Order>,IOrderRepository
+    public class CategoryRepository:GenericRepository<Category>,ICategoryRepository
     {
 
-        public OrderRepository(ApplicationDbcontext dbcontext): base(dbcontext)
+        public CategoryRepository(ApplicationDbcontext dbcontext): base(dbcontext)
         {
         
         
