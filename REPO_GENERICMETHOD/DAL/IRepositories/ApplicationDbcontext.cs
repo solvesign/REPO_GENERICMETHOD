@@ -18,6 +18,7 @@ namespace REPO_GENERICMETHOD.DAL.IRepositories
         public DbSet<Order> PlayerOrder { get; set; }
 
         public DbSet<Product> Product { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 
 }

@@ -12,7 +12,7 @@ namespace REPO_GENERICMETHOD.Controllers.IService
 
         Task  <Order> GetOrdersByID(int Id);
 
-       Task<bool> UpdateOrders(Order Orders);
+       bool UpdateOrders(Order Orders);
 
     }
 }
