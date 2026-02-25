@@ -1,0 +1,81 @@
+﻿@model IEnumerable<REPO_GENERICMETHOD.Models.Category>
+
+@{
+    ViewData["Title"] = "GetallCategory";
+}
+
+<style>
+    /* Material-style card */
+    .m-card {
+        border-radius: 12px;
+        border: none;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .m-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
+
+    .m-btn {
+        border-radius: 20px;
+        padding: 6px 16px;
+        font-weight: 500;
+    }
+
+    .m-title {
+        font-weight: 600;
+        color: #333;
+    }
+
+    .m-sub {
+        color: #666;
+        font-size: 0.9rem;
+    }
+</style>
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">Categories</h2>
+
+        <a asp-action="ADD_Category" class="btn btn-primary m-btn">
+            + Add Category
+        </a>
+    </div>
+
+    <div class="row g-4">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 col-sm-6">
+                <div class="card m-card h-100">
+                    <div class="card-body">
+
+                        <h5 class="m-title">@item.Name</h5>
+                        <p class="m-sub">@item.Description</p>
+
+                        <div class="d-flex justify-content-between mt-3">
+                            <a asp-action="Edit_Category" asp-route-id="@item.Id"
+                               class="btn btn-warning m-btn btn-sm">
+                                Edit
+                            </a>
+
+                            <a asp-action="DetailsofCategory" asp-route-id="@item.Id"
+                               class="btn btn-info text-white m-btn btn-sm">
+                                Details
+                            </a>
+
+                            <a asp-action="DeleteCategory" asp-route-id="@item.Id"
+                               class="btn btn-danger m-btn btn-sm">
+                                Delete
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>

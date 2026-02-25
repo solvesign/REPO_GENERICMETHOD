@@ -12,7 +12,7 @@ namespace REPO_GENERICMETHOD.Controllers.IService
 
         Task  <Player> GetPlayerByID(int Id);
 
-       bool UpdatePlayer(Player player);
+      Task <bool> UpdatePlayer(Player player);
 
     }
 }

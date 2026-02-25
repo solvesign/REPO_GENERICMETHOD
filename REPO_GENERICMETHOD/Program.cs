@@ -20,6 +20,10 @@ builder.Services.AddScoped<IBignnersRepository, BignnersRepository>();
 builder.Services.AddScoped<IBignnersServices, BignnersServices>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderServices, OrderServices>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ICategoryServices, CategoryServices>();
+
+
 
 
 var app = builder.Build();

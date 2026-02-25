@@ -38,7 +38,7 @@ namespace REPO_GENERICMETHOD.Controllers
            
             var res = await _categoryServices.Addcategory(category);
 
-            return RedirectToAction("GetallOrder");
+            return RedirectToAction("GetallCategory");
         }
         [HttpGet]
 
@@ -57,7 +57,7 @@ namespace REPO_GENERICMETHOD.Controllers
      
             var res1 = _categoryServices.Updatecategory(category);
 
-            return RedirectToAction("GetallOrder");
+            return RedirectToAction("GetallCategory");
         }
         [HttpGet]
 
@@ -75,7 +75,7 @@ namespace REPO_GENERICMETHOD.Controllers
 
             _categoryServices.Deletecategorys(res);
             
-            return RedirectToAction("GetallOrder");
+            return RedirectToAction("GetallCategory");
 
         }
 
